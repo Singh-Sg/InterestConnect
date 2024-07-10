@@ -1,6 +1,7 @@
-from django.contrib.auth import get_user_model
+from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
+from rest_framework.exceptions import AuthenticationFailed
 
 from .models import Interest, User
 
@@ -22,6 +23,27 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data["password"])
         user.save()
         return user
+
+
+class LoginSerializer(serializers.Serializer):
+    username = serializers.CharField()
+    password = serializers.CharField(write_only=True)
+
+    def validate(self, data):
+        username = data.get("username")
+        password = data.get("password")
+        if username and password:
+            user = authenticate(
+                request=self.context.get("request"),
+                username=username,
+                password=password,
+            )
+            if not user:
+                raise AuthenticationFailed("Invalid credentials")
+            data["user"] = user
+        else:
+            raise serializers.ValidationError('Must include "username" and "password".')
+        return data
 
 
 class InterestSerializer(serializers.ModelSerializer):
