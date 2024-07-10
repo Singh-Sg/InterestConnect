@@ -1,0 +1,78 @@
+.data-show-container {
+    max-width: 100%;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .notification {
+    display: flex;
+    align-items: center;
+    background-color: #4caf50;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .logout-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .request-btn {
+    background-color: #bcbcbc;
+    color: white;
+    cursor: default;
+  }
+  
+  .request-sent-btn {
+    background-color: #bcbcbc;
+    color: white;
+    cursor: default;
+  }
+
+  .css-1ygcj2i-MuiTableCell-root {
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.01071em;
+    display: table-cell;
+    vertical-align: inherit;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    text-align: left;
+    padding: 16px;
+    color: white!important;
+    background-color: #009579!important;
+}
+.css-hbtnrh-MuiTableCell-root {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.01071em;
+  display: table-cell;
+  vertical-align: inherit;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+  text-align: left;
+  padding: 0 0 0 4px;
+  color: white!important;
+  width: 48px;
+  background-color:#009579!important;
+}

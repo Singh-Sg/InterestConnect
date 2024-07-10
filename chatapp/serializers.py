@@ -4,6 +4,8 @@ from rest_framework import serializers
 from rest_framework.exceptions import AuthenticationFailed
 
 from .models import Interest, User
+from django.contrib.auth import authenticate
+from .models import User
 
 User = get_user_model()
 

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "chatapp",
     "channels",
+    "corsheaders",
 ]
 
 AUTH_USER_MODEL = "chatapp.User"
@@ -49,6 +50,7 @@ AUTH_USER_MODEL = "chatapp.User"
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -129,7 +131,6 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_REDIRECT_URL = "/api/chatapp/users/"
 
 ASGI_APPLICATION = "Backend.asgi.application"
 
@@ -142,3 +143,10 @@ CHANNEL_LAYERS = {
         },
     },
 }
+LOGIN_REDIRECT_URL = "/api/chatapp/users/"
+# CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = ("http://localhost:8000",)
+
+# CORS Config
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = False
