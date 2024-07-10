@@ -21,6 +21,8 @@ This project is a web application that facilitates sending interest messages bet
 ### Setup Instructions
 ### Backend (Django)
 - Clone the repository(```switch to master branch if default branch is main```).
+- Create virtual environment(```python3 -m venv myenv```)
+- Activate the virtual environment (```myenv/bin/activate for linux or myenv\Scripts\activate for window ```)
 - Install dependencies (```pip install -r requirements.txt```).
 - Create a superuser (```python manage.py createsuperuser```).
 - Run the server (```python manage.py runserver```).
